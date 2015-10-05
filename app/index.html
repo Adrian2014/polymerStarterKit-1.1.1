@@ -51,6 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endbuild -->
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
+  <!-- ***** ALL IMPORTS THROUGH THIS FILE ***** -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
 
@@ -63,6 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
 
+<!-- ******HEADER******* -->
     <paper-drawer-panel id="paperDrawerPanel">
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed>
@@ -90,7 +92,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </a>
         </paper-menu>
       </paper-scroll-header-panel>
+<!-- ******HEADER******* -->
 
+<!-- ******** SIDEBAR ********** -->
       <!-- Main Area -->
       <paper-scroll-header-panel main condenses keep-condensed-header>
 
@@ -114,11 +118,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
 
         </paper-toolbar>
+<!-- ******** SIDEBAR ********** -->        
 
+        
+<!-- ******** CONTENT ************ -->
         <!-- Main Content -->
         <div class="content">
+<!-- ***** PAGE ROUTING - DISPLAYING ******  app/elements/routing.html-->
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
-
+<!-- ****** HOME - DISPLAY ********* ('/') -->
             <section data-route="home">
               <paper-material elevation="1">
                 <my-greeting></my-greeting>
@@ -150,9 +158,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </ul>
                 <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
               </paper-material>
-
             </section>
+<!-- ****** HOME - DISPLAY ********* ('/')-->
 
+<!-- ***** USERS - DISPLAY ***** ('#!/users') -->
             <section data-route="users">
               <paper-material elevation="1">
                 <h2 class="page-title">Users</h2>
@@ -160,7 +169,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <a href="/users/Rob">Rob</a>
               </paper-material>
             </section>
-
+<!-- ***** USERS - DISPLAY ***** ('#!/users') -->
+<!-- ***** USER:PARAM - DISPLAY ***** ('#!/users/:PARM') -->
             <section data-route="user-info">
               <paper-material elevation="1">
                 <h2 class="page-title">
@@ -169,16 +179,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div>This is <span>{{params.name}}</span>'s section</div>
               </paper-material>
             </section>
+<!-- ***** USER:PARAM - DISPLAY ***** ('#!/users/:PARM') -->
 
+<!-- ***** CONTACT- DISPLAY ***** ('#!/contact') -->
             <section data-route="contact">
               <paper-material elevation="1">
                 <h2 class="page-title">Contact</h2>
                 <p>This is the contact section</p>
               </paper-material>
             </section>
+<!-- ***** CONTACT- DISPLAY ***** ('#!/contact') -->
 
           </iron-pages>
+<!-- ***** PAGE ROUTING - DISPLAYING ******  app/elements/routing.html-->          
         </div>
+<!-- ******** CONTENT ************ -->
+
       </paper-scroll-header-panel>
     </paper-drawer-panel>
 
